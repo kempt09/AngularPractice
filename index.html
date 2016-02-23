@@ -5,21 +5,23 @@
 	<title> Angular Practice </title>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
 </head>
-<body ng-app="">
-	<div ng-init="bands=['Death Cab','Radiohead','Postal Service','Brand New', 'Taking Back Sunday']">
+<body ng-app="myApp">
+
+	<div ng-controller="Bands">
 		<h3>Favorite Bands</h3>
 		<ul>
 			<li ng-repeat="band in bands">{{band}}</li>
 		</ul>
 	</div>
 
-	<div ng-init="fruits=[{'item': 'Orange', 'price': 25},{'item': 'Apple', 'price': 32},{'item': 'Banana', 'price': 10}]">
+	<div ng-controller="Fruits">
 		<div ng-repeat="food in fruits"> 
 			<h4> Item: {{food.item}} Cost: ${{food.price}} </h4>
 		</div>
-		<h4>Total: ${{25+32+10}}
-		<h4 ng-init='myMoney=20'>Can I afford these itemes? {{myMoney > 67}}!</h4>
+		<h4> Total: ${{total}} </h4>
+		<h4>Do I have enough cash? {{cash >= total}}! </h4>
 	</div>
+
 	<script src="app.js"></script>
 </body>
 </html>
